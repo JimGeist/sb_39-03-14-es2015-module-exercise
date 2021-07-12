@@ -1,17 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import fruits from "./foods";
+import { choice, remove } from "./helpers";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+// Randomly draw a fruit from the array
+// Log the message “I’d like one RANDOMFRUIT, please.”
+let fruit = choice(fruits);
+console.log(`I'd like one ${fruit}, please`);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// Log the message “Here you go: RANDOMFRUIT”
+console.log(`Here you go: ${fruit}`);
+
+// Log the message “Delicious! May I have another?”
+console.log(`Delicious! May I have another?`);
+
+// Remove the fruit from the array of fruits
+fruit = remove(fruits, fruit);
+
+// Log the message “I’m sorry, we’re all out. We have FRUITSLEFT left.”
+console.log(`I'm sorry, we're all out. We have ${fruits.length} left.`);
+
